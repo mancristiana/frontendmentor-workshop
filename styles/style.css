@@ -2,6 +2,7 @@
   --bgColor: hsl(233, 47%, 7%);
   --cardBgColor: hsl(244, 38%, 16%);
   --accentColor: hsl(277, 64%, 61%);
+  --overlayColor: hsla(277, 100%, 40%, 0.4);
   --accentLighterColor: hsl(277, 79%, 69%);
   --textColor: hsl(0, 0%, 100%);
   --paragraphColor: hsla(0, 0%, 100%, 0.75);
@@ -18,6 +19,9 @@ body {
   color: var(--textColor);
   font-family: "Lexend Deca", sans-serif;
   font-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main {
@@ -25,6 +29,7 @@ main {
   border-radius: 8px;
   overflow: hidden;
   margin: 64px 32px 16px;
+  max-width: 45ch;
 }
 
 h1 {
@@ -32,7 +37,21 @@ h1 {
 }
 
 h1 span {
-  color: var(--accentColor); 
+  color: var(--accentColor);
+}
+
+picture {
+  display: grid;
+  grid-template: 1fr / 1fr;
+}
+
+picture * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+picture .overlay {
+  background-color: var(--overlayColor);
 }
 
 img {
@@ -79,5 +98,29 @@ footer {
 }
 
 .stat {
-  margin-bottom: 20px;
+  margin: 20px;
+}
+
+@media screen and (min-width: 400px) {
+  dl {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    max-width: 100ch;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .content {
+    max-width: 45ch;
+    text-align: left;
+    padding: 48px 64px;
+  }
+
+  .stat:first-child {
+    margin-left: 0;
+  }
 }

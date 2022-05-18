@@ -22,10 +22,15 @@
   <body>
     <main>
       <picture>
-        <img
-        src="images/image-header-mobile.jpg"
-        alt="data analysts typing on computer"
+        <source
+          media="screen and (min-width: 1000px)"
+          srcset="images/image-header-desktop.jpg"
         />
+        <img
+          src="images/image-header-mobile.jpg"
+          alt="data analysts typing on computer"
+        />
+        <div class="overlay"></div>
       </picture>
       <div class="content">
         <h1>Get <span>insights</span> that help your business grow.</h1>
@@ -33,7 +38,7 @@
           Discover the benefits of data analytics and make better decisions
           regarding revenue, customer experience, and overall efficiency.
         </p>
-        
+
         <dl>
           <div class="stat">
             <dt>10k+</dt>
